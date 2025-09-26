@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gate Detail"
+        android:gravity="left"
+        android:textSize="@dimen/_16sdp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"
+        >
+
+    </androidx.appcompat.widget.AppCompatTextView>
+    <Spinner
+        android:id="@+id/spinnerOptions"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/_16sdp"
+        android:fontFamily="@font/inter_bold"
+        android:background="@drawable/edit_text_bg"
+
+        android:layout_height="@dimen/_60sdp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    >
+
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:text="OK"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:lineSpacingExtra="6sp"
+        android:letterSpacing="0.00714"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="4dp"/>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:text="Cancel"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:lineSpacingExtra="6sp"
+        android:letterSpacing="0.00714"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"/>
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Schedule Details"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Operation Date"
+        android:gravity="left"
+        android:textSize="19dp"
+
+        android:lineSpacingExtra="8sp"
+        android:letterSpacing="0.009375"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/text_dark" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/_5sd"
+        android:hint="Operation Date"
+        android:id="@+id/tv_operationdate"
+        android:paddingLeft="@dimen/_10sd"
+        android:paddingTop="@dimen/_20sd"
+        android:textSize="@dimen/_14sd"
+        android:focusable="true"
+        android:clickable="true"
+        android:background="@drawable/edit_text_bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Time / End Time"
+        android:gravity="left"
+        android:textSize="19dp"
+        android:lineSpacingExtra="8sp"
+        android:letterSpacing="0.009375"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/text_dark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sd"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:hint="Start Time"
+            android:paddingLeft="@dimen/_10sd"
+            android:id="@+id/tv_starttime"
+            android:textSize="@dimen/_14sd"
+            android:paddingTop="@dimen/_22sdp"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/text_dark"
+            android:background="@drawable/edit_text_bg" />
+
+        <Space
+            android:layout_width="@dimen/_10sd"
+            android:layout_height="60dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:hint="End Time"
+            android:id="@+id/tv_endtime"
+            android:paddingTop="@dimen/_22sdp"
+            android:paddingLeft="@dimen/_10sd"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/_14sd"
+            android:background="@drawable/edit_text_bg" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="venue"
+        android:gravity="left"
+        android:textSize="19dp"
+        android:lineSpacingExtra="8sp"
+        android:letterSpacing="0.009375"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/text_dark" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/_5sd"
+        android:background="@drawable/edit_text_bg"
+        android:hint="venue"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/text_dark"
+        android:paddingLeft="@dimen/_10sd"
+
+        android:id="@+id/ed_note"
+        android:textSize="@dimen/_14sd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/grey_btn_background"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:lineSpacingExtra="6sp"
+            android:letterSpacing="0.00714"
+            android:gravity="center"
+             />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/green_button_background"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:lineSpacingExtra="6sp"
+            android:letterSpacing="0.00714"
+            android:gravity="center"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</LinearLayout>

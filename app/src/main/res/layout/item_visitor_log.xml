@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sd"
+    android:background="@drawable/edit_logintext_bg"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/_10sd"
+        android:paddingRight="@dimen/_10sd"
+        android:background="@drawable/text_bg"
+
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="16sp"
+                android:id="@+id/tvVisitorName"
+
+                android:lineSpacingExtra="8sp"
+                android:letterSpacing="0.009375"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/black"
+                />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    >
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Status:"
+                        android:gravity="left"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.00714"
+                        android:lineSpacingExtra="6dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/black"
+
+                        />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pending"
+                            android:gravity="right"
+                            android:layout_alignParentRight="true"
+                            android:textSize="14sp"
+                            android:paddingLeft="@dimen/_10sd"
+                            android:paddingRight="@dimen/_10sd"
+                            android:paddingTop="@dimen/_5sd"
+                            android:paddingBottom="@dimen/_5sd"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_statusdetail"
+                            />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="@dimen/_8sd"
+                    >
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Meeing Type:"
+                        android:gravity="left"
+                        android:textSize="14sp"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.00714"
+                        android:lineSpacingExtra="6dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/black"
+
+                        />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vivek"
+                        android:id="@+id/tv_meeting_type"
+
+                        android:gravity="right"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:letterSpacing="0.00714"
+                        android:lineSpacingExtra="6dp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/black"
+                        />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_10sd"
+                    >
+
+                        <!-- First TextView: "Purpose:" -->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_label_purpose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Meeting ID:"
+                            android:gravity="start"
+                            android:textSize="14sp"
+                            android:letterSpacing="0.00714"
+                            android:lineSpacingExtra="6dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/black"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginEnd="4dp" />
+
+                        <!-- Second TextView: "Parent" -->
+                    <androidx.appcompat.widget.AppCompatTextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@id/tv_label_purpose"
+                        android:fontFamily="@font/inter_semibold"
+                        android:gravity="end"
+                        android:letterSpacing="0.00714"
+                        android:lineSpacingExtra="6dp"
+                        android:text="Parent"
+                        android:id="@+id/tv_VisitorCode"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                        <!-- Third TextView: "01-06-2025" aligned to right -->
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_10sd"
+                    android:weightSum="2"
+                    >
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_meeting_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="01-06-2025"
+                        android:layout_weight="1.3"
+                        android:gravity="left"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="8sp"
+                        android:letterSpacing="0.009375"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/black"
+                        android:lineHeight="16sp"
+                        android:textStyle="bold"
+                        android:layout_alignParentEnd="true" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:gravity="right"
+                        android:text="11:30 AM"
+                        android:letterSpacing="0.00714"
+                        android:lineSpacingExtra="6dp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_reject"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:text="Reject"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:lineHeight="20sp"
+                android:letterSpacing="0.025"
+                android:fontFamily="@font/inter_medium"
+                android:lineSpacingExtra="8sp"
+                android:layout_margin="5dp"
+                android:textAllCaps="false"
+                android:background="@drawable/orange_button_background"
+                android:textColor="@color/red"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:text="Reschedule"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/grey_button_background"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:lineHeight="20sp"
+
+                android:letterSpacing="0.025"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/black"
+                android:id="@+id/btn_reschedule"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_approve"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/green_button_background"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:letterSpacing="0.025"
+                android:lineHeight="20sp"
+                android:text="Approve"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_arrived"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/green_button_background"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:letterSpacing="0.025"
+                android:lineHeight="20sp"
+                android:text="Arrived"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:text="Check In"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="@drawable/green_button_background"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:lineHeight="20sp"
+                android:letterSpacing="0.025"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/white"
+                android:id="@+id/btn_checkin"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:text="Check Out"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="@drawable/green_button_background"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:lineHeight="20sp"
+                android:letterSpacing="0.025"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/white"
+                android:id="@+id/btn_checkout"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="@drawable/green_button_background"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:lineHeight="20sp"
+                android:letterSpacing="0.025"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/white"
+                android:id="@+id/btn_cancel"
+                />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

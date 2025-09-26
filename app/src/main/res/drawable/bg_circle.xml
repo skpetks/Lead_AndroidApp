@@ -1,0 +1,12 @@
+<!-- res/drawable/bg_circle.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/txt_bg" /> <!-- Background color -->
+    <!-- Optional: Rounded corners -->
+    <corners android:radius="6dp" />
+
+    <!-- Fixed size (optional) -->
+    <size
+        android:width="30dp"
+        android:height="30dp" />
+</shape>

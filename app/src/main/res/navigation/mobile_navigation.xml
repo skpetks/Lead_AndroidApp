@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.innovu.visitor.ui.home.HomeFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.innovu.visitor.ui.dashboard.VisitorLogFragment"
+        android:label="@string/title_visitorlog"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.innovu.visitor.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+
+
+    <fragment
+        android:id="@+id/navigation_visitorcreate"
+        android:name="com.innovu.visitor.ui.dashboard.CreateVisitorFragment"
+        android:label="@string/title_createvisitor"
+        tools:layout="@layout/fragment_createvisitor"
+        >
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_visitordetail"
+        android:name="com.innovu.visitor.ui.dashboard.DetailVisitorFragment"
+        android:label="@string/title_detailvisitor"
+        tools:layout="@layout/fragment_detailvisitor"
+        >
+    </fragment>
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.innovu.visitor.ui.dashboard.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile"
+        >
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/navigation_editprofile"
+        android:name="com.innovu.visitor.ui.dashboard.EditProfileFragment"
+        android:label="@string/title_editprofile"
+        tools:layout="@layout/fragment_editprofile"
+        >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_chatdetail"
+        android:name="com.innovu.visitor.ui.chat.ChatFragment"
+        android:label="@string/title_chat"
+        tools:layout="@layout/fragment_chat"
+        >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.innovu.visitor.ui.chat.AllChatFragment"
+        android:label="@string/title_chat"
+        tools:layout="@layout/fragment_all_chat"
+        >
+        <action
+            android:id="@+id/action_allChatFragment_to_chatDetailFragment"
+            app:destination="@id/navigation_chatdetail" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/navigation_chatuser"
+        android:name="com.innovu.visitor.ui.chat.UserFragment"
+        android:label="@string/title_chatuser"
+        tools:layout="@layout/fragment_user"
+        >
+        <action
+            android:id="@+id/action_allChatFragment_to_chatDetailFragment"
+            app:destination="@id/navigation_chatdetail" />
+    </fragment>
+
+</navigation>

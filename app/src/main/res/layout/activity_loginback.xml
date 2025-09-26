@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4D5AB79D">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/round_shape"
+            android:layout_below="@+id/imgcenter"
+            android:translationY="-100dp">
+
+        </View>
+
+        <ImageView
+            android:id="@+id/imgcenter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            android:scaleType="fitCenter"
+
+            android:src="@drawable/people_image">
+
+        </ImageView>
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_below="@id/imgcenter"
+
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Your existing CardView and layout here -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/card1"
+                    app:cardCornerRadius="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:cardUseCompatPadding="true" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/llayout1"
+                        android:padding="16dp">
+
+                        <!-- First TextView -->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_visitor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Visitor"
+                            android:gravity="center"
+                            android:textSize="@dimen/_36sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/inter_bold"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <!-- Second TextView -->
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_management"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:gravity="center"
+                            android:text="Management"
+                            android:textColor="@color/purple_200"
+                            android:textSize="36sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_visitor" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="center"
+                            android:text="Welcome Security level check thru app"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp"
+                            android:letterSpacing="0.009375"
+                            android:lineSpacingExtra="8sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_management" />
+
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_getstarted"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/green_button_background"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="Get Started"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="6sp"
+                            android:letterSpacing="0.00714"
+                            android:gravity="center"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/llayout2"
+                        android:visibility="gone"
+                        android:padding="16dp">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_Login"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Login"
+                            android:gravity="left"
+                            android:textSize="@dimen/_36sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/inter_bold"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Staff User ID"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:textColor="@color/txt_color"
+                            android:fontFamily="@font/inter_medium"
+                            android:lineSpacingExtra="8sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:letterSpacing="0.009375"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/ed_username"
+                            android:layout_width="match_parent"
+                            android:background="@drawable/edit_logintext_bg"
+                            android:textColor="@color/black"
+                            android:text=""
+                            android:inputType="text"
+                            android:singleLine="true"
+                            app:fontFamily="@font/inter_regular"
+                            android:textSize="14sp"
+                            android:hint="Type your staff email"
+                            android:lineSpacingExtra="6sp"
+                            android:layout_marginTop="@dimen/_21sd"
+                            android:letterSpacing="0.017857"
+                            android:paddingLeft="@dimen/_16sd"
+                            android:layout_height="60dp">
+
+                        </androidx.appcompat.widget.AppCompatEditText>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Password"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:textColor="@color/txt_color"
+                            android:fontFamily="@font/inter_medium"
+                            android:lineSpacingExtra="8sp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:letterSpacing="0.009375"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/ed_password"
+                            android:layout_width="match_parent"
+                            android:background="@drawable/edit_logintext_bg"
+                            android:textColor="@color/black"
+                            android:text=""
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            app:fontFamily="@font/inter_regular"
+                            android:textSize="14sp"
+                            android:hint="Type your password"
+                            android:lineSpacingExtra="6sp"
+                            android:layout_marginTop="@dimen/_21sd"
+                            android:letterSpacing="0.017857"
+                            android:paddingLeft="@dimen/_16sd"
+                            android:layout_height="60dp">
+
+                        </androidx.appcompat.widget.AppCompatEditText>
+
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/bnt_login"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/green_button_background"
+                            android:fontFamily="@font/inter_semibold"
+                            android:text="Login"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="6sp"
+                            android:letterSpacing="0.00714"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/progress"
+        layout="@layout/custom_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

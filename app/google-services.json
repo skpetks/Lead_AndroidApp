@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "97066023695",
+    "project_id": "visitorapp-33b14",
+    "storage_bucket": "visitorapp-33b14.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97066023695:android:9783d6a85c769d271f9c7a",
+        "android_client_info": {
+          "package_name": "com.innovu.visitor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3LktAjJTaeGKiOQ7SWl7OUpaCKvv35Fw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

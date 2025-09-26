@@ -1,0 +1,5 @@
+<!-- res/drawable/ic_grid_with_bg.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_circle" />
+    <item android:drawable="@drawable/ic_grid" />
+</layer-list>

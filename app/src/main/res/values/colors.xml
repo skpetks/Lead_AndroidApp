@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#5AB79D</color>
+    <color name="purple_500">#5AB79D</color>
+    <color name="purple_700">#5AB79D</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#888888</color>
+    <color name="txt_color">#323434</color>
+    <color name="txt_bg">#F5F5F5</color>
+    <color name="button_color">#5AB79D</color>
+    <color name="light_grey">#f5f5f5</color>
+
+    <color name="selector_nav_item_color">#5AB79D</color>
+    <color name="text_dark">#4D4D4D</color>
+    <color name="btn_grey">#CECECE</color>
+    <color name="edittext_border">#C1C3C9</color>
+
+    <color name="tv_profile">#2C2D3A</color>
+    <color name="neutral">#686A8A</color>
+    <color name="light_orange">#FEECEB</color>
+
+
+    <color name="orangelight">#FFD4D4</color>
+    <color name="yellow">#F39B36</color>
+    <color name="orange">#F6695E</color>
+    <color name="red">#F31717</color>
+    <color name="lorange">#FFA726</color>
+
+
+
+    <color name="puripledark">#686A8A</color>
+    <color name="blue">#368EF3</color>
+</resources>

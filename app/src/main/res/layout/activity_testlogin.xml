@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- QR Scanner -->
+        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/barcode_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+
+            android:layout_marginBottom="16dp" />
+
+        <!-- Image -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_scanimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camerascan_icon"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="16dp" />
+
+        <!-- OR Text -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_or"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="or"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_36sdp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Enter OTP -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter OTP"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="@dimen/_36sdp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- OTP Boxes -->
+        <LinearLayout
+            android:id="@+id/otp_box_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_1"
+                style="@style/OtpBoxStyle" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_2"
+                style="@style/OtpBoxStyle" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_3"
+                style="@style/OtpBoxStyle" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_4"
+                style="@style/OtpBoxStyle" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_5"
+                style="@style/OtpBoxStyle" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_6"
+                style="@style/OtpBoxStyle" />
+        </LinearLayout>
+
+        <!-- Submit / Cancel Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/grey_btn_background"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="60dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_submit"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/green_button_background"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Flashlight -->
+        <ImageButton
+            android:id="@+id/btnFlash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_camera"
+            android:contentDescription="Toggle Flashlight" />
+    </LinearLayout>
+</ScrollView>

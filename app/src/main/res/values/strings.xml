@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">LeadManagementApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_editprofile">EditProfile</string>
+
+    <string name="title_chatuser">Chat User</string>
+    <string name="title_visitorlog">Visitor-Log</string>
+    <string name="title_createvisitor">Visitor-Create</string>
+
+    <string name="title_detailvisitor">Detail-Visitor</string>
+    <string name="new_visitor">New Lead</string>
+    <string name="scan">Scan</string>
+    <string name="cancel">Cancel</string>
+</resources>

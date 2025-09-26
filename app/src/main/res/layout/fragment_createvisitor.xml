@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="@dimen/_5sd"
+    android:layout_marginRight="@dimen/_5sd"
+    android:background="@drawable/edit_logintext_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_10sd"
+            android:paddingRight="@dimen/_10sd"
+            android:background="@drawable/text_bg">
+            <!-- All your form views go here -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meeting details"
+                android:gravity="left"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_medium"
+                android:lineSpacingExtra="8dp"
+                android:letterSpacing="0.009375"
+                android:textColor="@color/text_dark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visitor Type"
+                android:gravity="left"
+                android:textSize="16sp"
+
+                android:fontFamily="@font/inter_regular"
+                android:letterSpacing="0.0"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/text_dark"  />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_visitor_type"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Select Visitor Type"
+                android:padding="16dp"
+                android:focusable="true"
+                android:fontFamily="@font/inter_bold"
+                android:drawableRight="@drawable/ic_arrowdown"
+                android:paddingRight="@dimen/_16sd"
+                android:paddingBottom="@dimen/_16sd"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+
+                android:clickable="true"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visitor Phone"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="left"
+                android:letterSpacing="0.009375"
+                android:lineSpacingExtra="8sp"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/text_dark"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    >
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ed_contact"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text_bg"
+        android:fontFamily="@font/inter_regular"
+        android:hint="Visitor Phone"
+        android:inputType="number"
+        android:maxLength="10"
+        android:layout_weight=".5"
+        android:paddingLeft="@dimen/_10sd"
+        android:textColor="@color/text_dark"
+        android:textSize="@dimen/_14sd" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sp"
+
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/ic_search"
+        android:visibility="gone"
+
+        >
+
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Send OTP"
+        android:layout_weight="1.5"
+        android:background="@drawable/green_button_background"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:layout_margin="@dimen/_4sdp"
+        android:id="@+id/img_verify"
+        >
+
+    </androidx.appcompat.widget.AppCompatButton>
+</LinearLayout>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visitor Name"
+                android:gravity="left"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_regular"
+                android:letterSpacing="0.0"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/text_dark"  />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Visitor Name"
+                android:id="@+id/ed_visitor"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="16dp" />
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GR No"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="left"
+                android:letterSpacing="0.009375"
+                android:lineSpacingExtra="8sp"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/text_dark"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:hint="GR No/Child Name"
+                android:paddingLeft="@dimen/_10sd"
+                android:id="@+id/ed_studentid"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_14sd"
+                android:paddingRight="@dimen/_20sdp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/text_dark"
+                android:background="@drawable/edit_text_bg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visitor Purpose"
+                android:gravity="left"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_regular"
+                android:letterSpacing="0.0"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/text_dark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_meeting_type"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_arrowdown"
+                android:paddingRight="@dimen/_16sd"
+                android:paddingBottom="@dimen/_16sd"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/_16sd"
+                android:focusable="true"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"
+                android:hint="Meeting Type"
+                android:padding="16dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Department"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="left"
+                android:letterSpacing="0.009375"
+                android:lineSpacingExtra="8sp"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/text_dark"
+
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_department"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center_vertical"
+                android:hint="Department Name"
+                android:paddingLeft="@dimen/_10sd"
+                android:paddingRight="@dimen/_20sdp"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/_14sd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="left"
+                android:letterSpacing="0.009375"
+                android:lineSpacingExtra="8sp"
+                android:text="Date"
+                android:visibility="gone"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_operationdate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:clickable="true"
+                android:visibility="gone"
+                android:focusable="true"
+                android:hint="Meeting Date"
+                android:drawableRight="@drawable/ic_calendar"
+                android:paddingLeft="@dimen/_10sd"
+                android:paddingTop="@dimen/_20sd"
+                android:paddingRight="@dimen/_16sd"
+                android:paddingBottom="@dimen/_16sd"
+                android:textSize="@dimen/_14sd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Time / End Time"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="left"
+                android:visibility="gone"
+                android:letterSpacing="0.009375"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+
+                />
+
+            <LinearLayout
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:hint="Start Time"
+                    android:paddingLeft="@dimen/_10sd"
+                    android:id="@+id/tv_starttime"
+                    android:drawableRight="@drawable/ic_time_circle"
+                    android:paddingRight="@dimen/_16sd"
+                    android:paddingBottom="@dimen/_16sd"
+                    android:textSize="@dimen/_14sd"
+                    android:paddingTop="@dimen/_22sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/text_dark"
+                    android:background="@drawable/edit_text_bg" />
+
+                <Space
+                    android:layout_width="@dimen/_10sd"
+                    android:layout_height="60dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:hint="End Time"
+                    android:id="@+id/tv_endtime"
+                    android:paddingTop="@dimen/_22sdp"
+                    android:paddingLeft="@dimen/_10sd"
+                    android:drawableRight="@drawable/ic_time_circle"
+                    android:paddingRight="@dimen/_16sd"
+                    android:paddingBottom="@dimen/_16sd"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/_14sd"
+                    android:background="@drawable/edit_text_bg" />
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meeting User"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="left"
+                android:letterSpacing="0.009375"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+
+
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_meeting_user"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Select Meeting User"
+                android:padding="16dp"
+                android:drawableRight="@drawable/ic_arrowdown"
+                android:paddingRight="@dimen/_16sd"
+                android:paddingBottom="@dimen/_16sd"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/text_dark"
+                android:focusable="true"
+                android:clickable="true"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Venue/Meeting Location"
+                android:gravity="left"
+                android:visibility="gone"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
+                android:letterSpacing="0.009375"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="venue"
+                android:visibility="gone"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/text_dark"
+                android:paddingLeft="@dimen/_10sd"
+
+                android:id="@+id/ed_note"
+                android:textSize="@dimen/_14sd" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Photo"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="left"
+                android:letterSpacing="0.009375"
+                android:lineSpacingExtra="8sp"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCaptureImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera"
+                android:layout_marginTop="@dimen/_16sd"
+                android:text="Capture Image" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/grey_btn_background"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Cancel"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="6sp"
+                    android:letterSpacing="0.00714"
+                    android:gravity="center"
+                    />
+                <Space
+                    android:layout_width="@dimen/_10sd"
+                    android:layout_height="60dp" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/green_button_background"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Approval-Pending"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="6sp"
+                    android:letterSpacing="0.00714"
+                    android:gravity="center"
+                    tools:ignore="MissingConstraints" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/progress"
+        layout="@layout/custom_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

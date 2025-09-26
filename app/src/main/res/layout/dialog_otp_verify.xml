@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90000000"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_22sp"
+            android:background="@drawable/bg_dialog_rounded"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+<androidx.appcompat.widget.AppCompatTextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Verification Code "
+    android:gravity="center"
+    android:layout_marginTop="@dimen/_40sdp"
+    android:textSize="@dimen/_22sdp"
+    android:fontFamily="@font/inter_bold"
+    >
+
+</androidx.appcompat.widget.AppCompatTextView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/img_status"
+                        >
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/otp_box_container"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/tv_enter"
+                android:layout_height="wrap_content">
+
+                <!-- Repeat for 6 boxes -->
+                <androidx.appcompat.widget.AppCompatEditText android:id="@+id/otp_1" style="@style/OtpBoxStyle"/>
+                <androidx.appcompat.widget.AppCompatEditText android:id="@+id/otp_2" style="@style/OtpBoxStyle"/>
+                <androidx.appcompat.widget.AppCompatEditText android:id="@+id/otp_3" style="@style/OtpBoxStyle"/>
+                <androidx.appcompat.widget.AppCompatEditText android:id="@+id/otp_4" style="@style/OtpBoxStyle"/>
+                <androidx.appcompat.widget.AppCompatEditText android:id="@+id/otp_5" style="@style/OtpBoxStyle"/>
+                <androidx.appcompat.widget.AppCompatEditText android:id="@+id/otp_6" style="@style/OtpBoxStyle"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:text="Confirm"
+                android:id="@+id/btn_confirm"
+                android:fontFamily="@font/inter_semibold"
+                android:letterSpacing="0.00714"
+                android:lineSpacingExtra="6sp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@drawable/green_button_background"
+             android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginLeft="@dimen/_20sd"
+                android:layout_marginRight="@dimen/_20sd"
+                >
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

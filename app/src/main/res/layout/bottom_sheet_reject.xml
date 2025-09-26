@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:hint="Reject reason"
+        android:paddingLeft="@dimen/_10sd"
+        android:background="@drawable/edit_logintext_bg"
+        android:id="@+id/ed_reason"
+        android:visibility="gone"
+        >
+
+    </androidx.appcompat.widget.AppCompatEditText>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnReject"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_14sd"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sd"
+        android:text="Reject Request" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_arrived"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_14sd"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sd"
+        android:text="Arrived Request" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_approve"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_14sd"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sd"
+        android:text="Approve" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_14sd"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sd"
+        android:text="Cancel" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_checkin"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_14sd"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sd"
+        android:text="Approve/CheckIn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_checkout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_14sd"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sd"
+        android:text="Check Out" />
+
+
+</LinearLayout>

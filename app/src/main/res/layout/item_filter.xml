@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_14sd"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_20sd"
+        android:paddingRight="@dimen/_20sd"
+
+        android:layout_margin="@dimen/_5sd"
+        android:background="@drawable/green_button_background"
+        android:fontFamily="@font/inter_regular"
+        android:text="Pending"
+        tools:ignore="MissingConstraints" />
+</LinearLayout>

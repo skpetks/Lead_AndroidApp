@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#90000000"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_22sp"
+            android:background="@drawable/bg_dialog_rounded"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+<androidx.appcompat.widget.AppCompatTextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Welcome to Visitor App"
+    android:gravity="center"
+    android:textSize="@dimen/_22sdp"
+    >
+
+</androidx.appcompat.widget.AppCompatTextView>
+
+
+
+            <View
+                android:id="@+id/layoutView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_30sp"
+                android:background="#000000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWelcomeReward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sd" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewWelcomeReward"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:background="#000000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sd"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Ok"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_22sdp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

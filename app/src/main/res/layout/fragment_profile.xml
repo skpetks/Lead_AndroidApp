@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+
+
+        tools:ignore="MissingConstraints">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:src="@drawable/profile"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:id="@+id/imageViewProfile"
+                android:scaleType="centerCrop"
+                >
+
+            </androidx.appcompat.widget.AppCompatImageView>
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:id="@+id/textViewName"
+            android:textColor="@color/tv_profile"
+            android:textSize="@dimen/_22sdp">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:weightSum="2"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username : "
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textSize="@dimen/_18sd"
+                android:textColor="@color/neutral"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textSize="@dimen/_16sd"
+                android:id="@+id/tv_Username"
+                android:textColor="@color/tv_profile"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:weightSum="2"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone : "
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textSize="@dimen/_18sd"
+                android:textColor="@color/neutral"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textSize="@dimen/_16sd"
+                android:id="@+id/textViewPhone"
+                android:textColor="@color/tv_profile"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/_12sdp"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender : "
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textSize="@dimen/_18sd"
+                android:textColor="@color/neutral"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:id="@+id/textViewGender"
+                android:textSize="@dimen/_16sd"
+                android:textColor="@color/tv_profile"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/_12sdp"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email : "
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textSize="@dimen/_18sd"
+                android:textColor="@color/neutral"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/textViewEmail"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:textSize="@dimen/_16sd"
+                android:textColor="@color/tv_profile"
+                >
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/btn_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/green_button_background"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_edit"  />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Edit Profile"
+                android:layout_marginLeft="@dimen/_18sd"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:lineSpacingExtra="6sp"
+                android:letterSpacing="0.00714"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/custom_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/orange_button_background"
+            android:gravity="center"
+            android:padding="12dp"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/btn_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_logout"  />
+            <TextView
+                android:id="@+id/btn_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textColor="@color/orange"
+                android:layout_marginLeft="@dimen/_18sd"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="18sp"
+                android:lineSpacingExtra="6sp"
+                android:letterSpacing="0.00714"
+                android:layout_gravity="center_vertical"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

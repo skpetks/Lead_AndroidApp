@@ -1,0 +1,94 @@
+<!-- res/layout/bottom_sheet_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/white_btn_bg"
+            android:id="@+id/ll_entry"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_visitor"
+                android:layout_marginTop="@dimen/_22sdp"
+                >
+            </androidx.appcompat.widget.AppCompatImageView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/new_visitor"
+                android:gravity="center"
+                android:textSize="@dimen/_22sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/purple_200"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginBottom="@dimen/_22sdp"
+                >
+            </androidx.appcompat.widget.AppCompatTextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/white_btn_bg"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:id="@+id/ll_scan"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_scan"
+                android:layout_marginTop="@dimen/_22sdp"
+                >
+            </androidx.appcompat.widget.AppCompatImageView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/scan"
+                android:gravity="center"
+                android:textSize="@dimen/_22sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/purple_200"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginBottom="@dimen/_22sdp"
+                >
+            </androidx.appcompat.widget.AppCompatTextView>
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_exist"
+            android:layout_marginTop="@dimen/_14sd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdp"
+            android:background="@drawable/green_button_background"
+            android:fontFamily="@font/inter_semibold"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sd"
+            android:text="OTP" />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

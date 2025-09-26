@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginEnd="50dp">  <!-- Add space to the right -->
+
+    <!-- Bell Icon -->
+    <ImageView
+        android:id="@+id/bell_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_bell"
+        android:contentDescription="Notification Bell"
+        android:layout_gravity="center" />
+
+    <!-- Red Dot Badge -->
+    <View
+        android:id="@+id/red_dot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/red_dot_background"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:visibility="gone"
+   />
+</FrameLayout>

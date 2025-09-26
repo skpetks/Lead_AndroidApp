@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_logintext_bg"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/_10sd"
+        android:paddingRight="@dimen/_10sd"
+
+        android:background="@drawable/text_bg"
+
+        tools:ignore="MissingConstraints">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:gravity="left"
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+
+                    android:lineSpacingExtra="8sp"
+                    android:letterSpacing="0.009375"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/text_dark"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="in Progress"
+                    android:textSize="16dp"
+                    android:textAlignment="viewEnd"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="8sp"
+                    android:letterSpacing="0.009375"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/yellow"
+                  android:id="@+id/tv_status"
+
+                    />
+            </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student detail"
+                android:gravity="left"
+                android:textSize="16dp"
+                android:lineSpacingExtra="8sp"
+                android:letterSpacing="0.009375"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/text_dark"
+                />
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/_100sdp"
+                  android:orientation="horizontal"
+                  android:weightSum="4"
+                  >
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_weight="3"
+                      android:layout_margin="@dimen/_10sd"
+                      >
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:src="@drawable/profile"
+                          android:scaleType="centerCrop"
+                          >
+
+                      </ImageView>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:orientation="vertical"
+                      >
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_marginTop="@dimen/_22sdp"
+                          android:weightSum="2"
+                          >
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Name :"
+                              android:gravity="left"
+                              android:textSize="16sp"
+                              android:lineSpacingExtra="8sp"
+                              android:letterSpacing="0.009375"
+                              android:fontFamily="@font/inter_regular"
+                              android:textColor="@color/black"
+                              />
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Privithik"
+                              android:gravity="left"
+                              android:layout_weight="1"
+                              android:textSize="16sp"
+                              android:lineSpacingExtra="8sp"
+                              android:letterSpacing="0.009375"
+                              android:fontFamily="@font/inter_bold"
+                              android:textColor="@color/black"
+                              android:id="@+id/tv_Student"
+                              />
+
+                      </LinearLayout>
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:weightSum="2"
+                          >
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Class :"
+                              android:gravity="left"
+                              android:textSize="16sp"
+                              android:lineSpacingExtra="8sp"
+                              android:letterSpacing="0.009375"
+                              android:fontFamily="@font/inter_regular"
+                              android:textColor="@color/black"
+                              />
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="10 A"
+                              android:gravity="left"
+                              android:textSize="16sp"
+                              android:lineSpacingExtra="8sp"
+                              android:letterSpacing="0.009375"
+                              android:fontFamily="@font/inter_medium"
+                              android:textColor="@color/black"
+                              android:id="@+id/tv_StudentClass"
+                              />
+
+                      </LinearLayout>
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:weightSum="2"
+                          >
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="GR No:"
+                              android:gravity="left"
+                              android:textSize="16sp"
+                              android:lineSpacingExtra="8sp"
+                              android:letterSpacing="0.009375"
+                              android:fontFamily="@font/inter_regular"
+                              android:textColor="@color/black"
+                              />
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="12345"
+                              android:gravity="right"
+                              android:textSize="16sp"
+                              android:lineSpacingExtra="8sp"
+                              android:letterSpacing="0.009375"
+                              android:fontFamily="@font/inter_medium"
+                              android:textColor="@color/black"
+                              android:id="@+id/tv_GrNo"
+                              />
+
+                      </LinearLayout>
+
+
+
+                  </LinearLayout>
+              </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parents detail"
+                android:gravity="left"
+                android:textSize="16dp"
+                android:lineSpacingExtra="8sp"
+                android:letterSpacing="0.009375"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/text_dark"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:layout_margin="@dimen/_10sd"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/profile"
+                        android:scaleType="centerCrop"
+                        >
+
+                    </ImageView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_22sdp"
+                        android:weightSum="2"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Visito Name :"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_visitor"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:weightSum="2"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Father Name :"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ramesh"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_FatherName"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone :"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+
+
+                            />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9876543213"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_FatherNamePhone"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Staff detail"
+                android:gravity="left"
+                android:textSize="16dp"
+                android:lineSpacingExtra="8sp"
+                android:letterSpacing="0.009375"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/text_dark"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:layout_margin="@dimen/_10sd"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/profile"
+                        android:scaleType="centerCrop"
+                        >
+
+                    </ImageView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_22sdp"
+                        android:weightSum="2"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Staff Name :"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Arun"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_staffName"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone :"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_staffphone"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Department :"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1234567890"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_depart"
+                            />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Venue detail"
+                android:gravity="left"
+                android:textSize="16dp"
+                android:lineSpacingExtra="8sp"
+                android:letterSpacing="0.009375"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/text_dark"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_22sdp"
+                        android:weightSum="2"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Purpose :"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Parents meeting"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_meetingtype"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Visiting Time :"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColor="@color/black"
+                            />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10 to 11 AM"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_meetingtime"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="left"
+                            android:letterSpacing="0.009375"
+                            android:lineSpacingExtra="8sp"
+                            android:text="Venue Place:"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Class 10 A"
+                            android:gravity="left"
+                            android:textSize="16sp"
+                            android:lineSpacingExtra="8sp"
+                            android:letterSpacing="0.009375"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            android:id="@+id/tv_venu"
+
+                            />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCaptureImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera"
+                android:text="Capture Image" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/green_button_background"
+                android:fontFamily="@font/inter_semibold"
+
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:lineSpacingExtra="6sp"
+                android:letterSpacing="0.00714"
+                android:gravity="center"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/grey_btn_background"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:lineSpacingExtra="6sp"
+                android:letterSpacing="0.00714"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
