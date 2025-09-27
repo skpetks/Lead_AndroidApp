@@ -2,8 +2,10 @@ package com.innovu.visitor.ui.home
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.LayerDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -55,13 +57,16 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.innovu.visitor.MainActivity
+import com.innovu.visitor.model.Lead
 import com.innovu.visitor.model.MeetingStatusData
 import com.innovu.visitor.model.VisitorMeetingData
 import com.innovu.visitor.ui.dashboard.HorizontalAdapter
+import com.innovu.visitor.ui.dashboard.LeadAdapter
+import com.innovu.visitor.ui.dashboard.OnLeadActionListener
 import java.text.SimpleDateFormat
 import java.util.Date
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnLeadActionListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val scope = MainScope()
@@ -69,7 +74,7 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var visitorViewModel: VisitorViewModel
-    private lateinit var visitorAdapter: VisitorAdapter
+    private lateinit var visitorAdapter: LeadAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -92,7 +97,7 @@ class HomeFragment : Fragment() {
 
         getTitle()
 
-        visitorAdapter =  VisitorAdapter(emptyList(),requireActivity())
+        visitorAdapter =  LeadAdapter(emptyList(),this,requireActivity())
         visitorViewModel = ViewModelProvider(requireActivity())[VisitorViewModel::class.java]
         binding.recyclerVisitors.apply {
             layoutManager = LinearLayoutManager(requireContext())
@@ -109,7 +114,7 @@ class HomeFragment : Fragment() {
 
 
         // Observe LiveData
-        visitorViewModel.visitorResponse.observe(viewLifecycleOwner) { visitors ->
+        visitorViewModel.leadResponse.observe(viewLifecycleOwner) { visitors ->
             // TODO: Update your UI (RecyclerView, etc.) with visitor list
             binding.swipeRefreshLayout.isRefreshing = false
             if(visitors.size>0){
@@ -149,7 +154,7 @@ class HomeFragment : Fragment() {
         searchEditText.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
 
 //// Optional: Force the hint again
-        searchEditText.hint = "Search visitors..."
+        searchEditText.hint = "Search Lead..."
         visitorViewModel.MeetingListcount.observe(viewLifecycleOwner) { dataList ->
             generatePieChart(dataList)
         }
@@ -214,9 +219,22 @@ class HomeFragment : Fragment() {
     private fun GetVisitorDetail(){
         scope.launch {
             binding.progress.progressBar.isVisible=true
-            visitorViewModel!!.fetchVisitors(StorePrefData.UserIId, StorePrefData.OrgId, StorePrefData.BranchId)
+//            visitorViewModel!!.fetchVisitors(StorePrefData.UserIId, StorePrefData.OrgId, StorePrefData.BranchId)
+            visitorViewModel!!.getLeadsByUser(StorePrefData.UserIId)
+
+
+
+
+
         }
     }
+
+    private fun makePhoneCall(number: String) {
+        val intent = Intent(Intent.ACTION_CALL)
+        intent.data = Uri.parse("tel:$number")
+        startActivity(intent)
+    }
+
     private fun fetchMeetingsByStatus(statusId: Int) {
         // Call your API using Retrofit here
         binding.progress.progressBar.isVisible=true
@@ -298,6 +316,14 @@ class HomeFragment : Fragment() {
                 it.getTitleName()
             }
         }
+    }
+
+    override fun onCallClicked(lead: Lead) {
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            data = Uri.parse("tel:${lead.phone}")
+        }
+        startActivity(intent)
+
     }
 
 }

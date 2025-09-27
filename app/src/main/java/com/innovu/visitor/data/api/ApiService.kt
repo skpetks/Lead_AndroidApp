@@ -12,6 +12,7 @@ import com.innovu.visitor.model.EditUserProfileRequest
 import com.innovu.visitor.model.GateMappingRequest
 import com.innovu.visitor.model.GateResponse
 import com.innovu.visitor.model.ImageUploadResponse
+import com.innovu.visitor.model.LeadResponse
 import com.innovu.visitor.model.LoginRequest
 import com.innovu.visitor.model.LoginResponse
 import com.innovu.visitor.model.LogoutRequest
@@ -229,5 +230,21 @@ interface ApiService {
     @Headers("accept: application/json", "Content-Type: application/json")
     @POST("VisitorMeeting/GenerateOTP")
     suspend  fun generateOtp(@Body request: OtpRequest): Response<OtpResponse>
+
+
+
+    @GET("LeadMain/GetLeadPagedbyuser")
+    suspend fun getLeadsByUser(
+        @Query("UserId") userId: Int,
+        @Query("pageNumber") pageNumber: Int,
+        @Query("pageSize") pageSize: Int,
+        @Query("StatusID") StatusID: Int,
+
+
+    ): Response<LeadResponse>
+
+
+
+
 }
 

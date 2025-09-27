@@ -49,8 +49,8 @@ class LoginActivity : AppCompatActivity() {
             binding.llayout1.visibility= View.INVISIBLE
             binding.llayout2.visibility= View.VISIBLE
         }
-        binding.edUsername.setText("teacher1")
-        binding.edPassword.setText("Test@123")
+        binding.edUsername.setText("sadmin")
+        binding.edPassword.setText("Admin@123")
 //         binding.edUsername.setText("security2")
 //        binding.edPassword.setText("Test@123")
 

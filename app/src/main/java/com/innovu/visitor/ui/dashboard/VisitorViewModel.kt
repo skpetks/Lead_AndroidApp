@@ -14,6 +14,7 @@ import com.innovu.visitor.model.Department
 import com.innovu.visitor.model.DeviceTokenRequest
 import com.innovu.visitor.model.EditUserProfileRequest
 import com.innovu.visitor.model.GateMappingRequest
+import com.innovu.visitor.model.Lead
 import com.innovu.visitor.model.LogoutRequest
 import com.innovu.visitor.model.MeetingStatusData
 import com.innovu.visitor.model.MeetingType
@@ -59,6 +60,13 @@ class VisitorViewModel : ViewModel() {
 
     private val _visitorResponse = MutableLiveData<List<Visitor>>()
     val visitorResponse: LiveData<List<Visitor>> = _visitorResponse
+
+
+
+    private val _leadResponse = MutableLiveData<List<Lead>>()
+    val leadResponse: LiveData<List<Lead>> = _leadResponse
+
+
 
     private val _visitorCodeResponse = MutableLiveData<Visitor>()
     val visitorCodeResponse: LiveData<Visitor> = _visitorCodeResponse
@@ -108,6 +116,25 @@ class VisitorViewModel : ViewModel() {
             }
         }
     }
+
+    fun getLeadsByUser(userId: Int) {
+        viewModelScope.launch {
+            try {
+                val response = RetrofitClient.instance.getLeadsByUser(userId, 0, 100,0)
+                if (response.isSuccessful && response.body()?.success == true) {
+                    val visitors = response.body()?.data?.data ?: emptyList()
+                    _leadResponse.postValue(visitors)
+                } else {
+                    _leadResponse.postValue(emptyList())
+                    _error.postValue("${response.body()?.message}")
+                }
+            } catch (e: Exception) {
+                _error.postValue("Exception: ${e.localizedMessage}")
+            }
+        }
+    }
+
+
 
     private val _visitorType = MutableLiveData<List<VisitorType>>()
     val VisitorType: LiveData<List<VisitorType>> = _visitorType
@@ -473,7 +500,7 @@ class VisitorViewModel : ViewModel() {
         }
     }
 
-    fun GetVisitorFilter(StatusId:Int) {
+    fun GetVisitorFilterold(StatusId:Int) {
         viewModelScope.launch {
             try {
                 val response = RetrofitClient.instance.GetVisitorFilter(StorePrefData.UserIId,StatusId)
@@ -486,6 +513,23 @@ class VisitorViewModel : ViewModel() {
                     }
                 } else {
                     _error.postValue("${response.body()!!.message!!}")
+                }
+            } catch (e: Exception) {
+                _error.postValue("Exception: ${e.localizedMessage}")
+            }
+        }
+    }
+
+    fun GetVisitorFilter(StatusId:  Int) {
+        viewModelScope.launch {
+            try {
+                val response = RetrofitClient.instance.getLeadsByUser(StorePrefData.UserIId, 0, 100,StatusId)
+                if (response.isSuccessful && response.body()?.success == true) {
+                    val visitors = response.body()?.data?.data ?: emptyList()
+                    _leadResponse.postValue(visitors)
+                } else {
+                    _leadResponse.postValue(emptyList())
+                    _error.postValue("${response.body()?.message}")
                 }
             } catch (e: Exception) {
                 _error.postValue("Exception: ${e.localizedMessage}")

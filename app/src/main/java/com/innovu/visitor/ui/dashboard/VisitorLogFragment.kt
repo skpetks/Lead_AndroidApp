@@ -2,7 +2,9 @@ package com.innovu.visitor.ui.dashboard
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -30,11 +32,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.innovu.visitor.MainActivity
 import com.innovu.visitor.R
 import com.innovu.visitor.databinding.FragmentDashboardBinding
+import com.innovu.visitor.model.Lead
 import com.innovu.visitor.utlis.StorePrefData
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
-class VisitorLogFragment : Fragment() {
+class VisitorLogFragment : Fragment(), OnLeadActionListener {
 
     private var _binding: FragmentDashboardBinding? = null
     private val scope = MainScope()
@@ -42,7 +45,7 @@ class VisitorLogFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var visitorViewModel: VisitorViewModel
-    private lateinit var visitorAdapter: VisitorLogAdapter
+    private lateinit var visitorAdapter: LeadAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -67,7 +70,7 @@ class VisitorLogFragment : Fragment() {
 
         (requireActivity() as AppCompatActivity).let {
             if (it is MainActivity) {
-                it.updateTitleWithColor("Visit Log", Color.BLACK)
+                it.updateTitleWithColor("Lead Log", Color.BLACK)
             }
         }
 
@@ -75,14 +78,14 @@ class VisitorLogFragment : Fragment() {
         binding.progress.progressBar.isVisible=true
         visitorViewModel = ViewModelProvider(requireActivity())[VisitorViewModel::class.java]
 
-        visitorAdapter = VisitorLogAdapter(emptyList(),requireActivity())
+        visitorAdapter = LeadAdapter(emptyList(),this,requireActivity())
         binding.recyclerVisitors.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = visitorAdapter
         }
 
         // Observe LiveData
-        visitorViewModel.visitorResponse.observe(viewLifecycleOwner) { visitors ->
+        visitorViewModel.leadResponse.observe(viewLifecycleOwner) { visitors ->
 
             Log.d("visitors", "visitors() called with ${visitors.size} visitors")
             visitorAdapter.updateData(visitors.reversed())
@@ -143,7 +146,7 @@ class VisitorLogFragment : Fragment() {
         searchEditText.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
 
 //// Optional: Force the hint again
-        searchEditText.hint = "Search visitors..."
+        searchEditText.hint = "Search leads..."
 
         (requireActivity() as AppCompatActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.arrow_left)
     }
@@ -168,12 +171,18 @@ class VisitorLogFragment : Fragment() {
     }
     private fun GetVisitorDetail(){
         scope.launch {
-            visitorViewModel!!.fetchVisitors(StorePrefData.UserIId, StorePrefData.OrgId, StorePrefData.BranchId)
+            visitorViewModel!!.getLeadsByUser(StorePrefData.UserIId)
             visitorViewModel!!.GetmeetingStatusCount()
         }
 
     }
+    override fun onCallClicked(lead: Lead) {
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            data = Uri.parse("tel:${lead.phone}")
+        }
+        startActivity(intent)
 
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -1,5 +1,6 @@
 package com.innovu.visitor
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.BroadcastReceiver
@@ -14,6 +15,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.telephony.TelephonyManager
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -36,6 +38,7 @@ import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.os.postDelayed
 import androidx.core.view.ViewCompat
@@ -59,6 +62,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.innovu.visitor.data.api.RetrofitClient
 import com.innovu.visitor.databinding.ActivityMainBinding
 import com.innovu.visitor.model.GateDetail
+import com.innovu.visitor.services.CallReceiver
 import com.innovu.visitor.ui.PortraitCaptureActivity
 import com.innovu.visitor.ui.QrScannerActivity
 import com.innovu.visitor.ui.dashboard.VisitorViewModel
@@ -71,6 +75,26 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 class MainActivity : AppCompatActivity() {
+
+
+
+    private val callEndedReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            val phone = intent?.getStringExtra("phoneNumber")
+            Log.d("MainActivity", "Received CALL_ENDED broadcast for number: $phone")
+            showPopup(phone)
+        }
+    }
+
+
+    private fun showPopup(phone: String?) {
+        AlertDialog.Builder(this)
+            .setTitle("Call Ended")
+            .setMessage("Call ended with $phone")
+            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+            .show()
+    }
+    private lateinit var callReceiver: CallReceiver
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var binding: ActivityMainBinding
     private val visitorViewModel: VisitorViewModel by viewModels()
@@ -125,15 +149,12 @@ class MainActivity : AppCompatActivity() {
                 Log.d("MainActivity", "${it.gateDetailID}: ${it.gateName} - ${it.gateNumber}")
             }
         }
-
 //        navView.menu.getItem(2).setIcon(R.drawable.icon_plus)
 //        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
 //        val menu = bottomNavigationView.menu
 //        val thirdItem = menu.getItem(2) // Index 2 is the 3rd item
 //        thirdItem.setIcon(R.drawable.icon_plus)
-
 // Assuming your menu item ID is R.id.navigation_dashboard
-
 //           setupBottomNavUnderline(navView)
         // Observe LiveData
         visitorViewModel.visitorCodeResponse.observe(this) { visitors ->
@@ -149,20 +170,15 @@ class MainActivity : AppCompatActivity() {
             }else{
                 Snackbar.make(binding.ivPlus, "No Data found", Snackbar.LENGTH_LONG).show()
             }
-
         }
-
         visitorViewModel.error.observe(this) { errorMsg ->
            // Toast.makeText(this,  errorMsg, Toast.LENGTH_SHORT).show()
         }
-
         binding.ivPlus.setOnClickListener {
-            val bottomSheet = CustomBottomSheet()
-            bottomSheet.show(supportFragmentManager, bottomSheet.tag)
+          //  val bottomSheet = CustomBottomSheet()
+           // bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }
         // Trigger API call
-
-
         val role = UserRole.fromName("SECURITY")
         if (StorePrefData.RoleId == role?.id && StorePrefData.GateID==0) {
             // Do something
@@ -173,18 +189,14 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 100)
         }
-
-
         Log.d("FCM", "Token updated:"+StorePrefData.tokenUpdate)
 //        if (!StorePrefData.token.isEmpty() && StorePrefData.tokenUpdate) {
             val versionName = packageManager
                 .getPackageInfo(packageName, 0)
                 .versionName
-//
 //            homeViewModel.updateToken(versionName.toString())
 //            StorePrefData.tokenUpdate=false
 //        }
-
 //        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_grid)
         val bottomNav = findViewById<BottomNavigationView>(R.id.nav_view)
         val rootView = findViewById<View>(android.R.id.content)
@@ -205,10 +217,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 //        setupKeyboardVisibilityListener(bottomNav)
-
         fetchFirebaseToken()
         getTitleName()
         handleIntent(intent)
+        ActivityCompat.requestPermissions(this, arrayOf(
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.CALL_PHONE
+        ), 100)
     }
 
     fun updateTitleWithColor(titleText: String, color: Int = Color.BLACK) {
@@ -227,7 +243,6 @@ class MainActivity : AppCompatActivity() {
             titleText.length,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
-
         supportActionBar?.title = spannable
     }
 
@@ -380,7 +395,20 @@ class MainActivity : AppCompatActivity() {
              updateUnderline(bottomNav, item.itemId)
             true
         }
+
+      //  handleCallEndIntent(intent)
+
     }
+
+
+    private fun handleCallEndIntent(intent: Intent?) {
+        if (intent?.getBooleanExtra("CALL_ENDED", false) == true) {
+            val phone = intent.getStringExtra("PHONE_NUMBER")
+            Log.d("MainActivity", "App opened after call ended with: $phone")
+            showPopup(phone)
+        }
+    }
+
 
     @SuppressLint("RestrictedApi")
     fun updateUnderline(bottomNav: BottomNavigationView, selectedId: Int? = null) {
@@ -434,11 +462,15 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         val filter = IntentFilter("SHOW_CUSTOM_POPUP")
         LocalBroadcastManager.getInstance(this).registerReceiver(popupReceiver, filter)
+        LocalBroadcastManager.getInstance(this)
+            .registerReceiver(callEndedReceiver, IntentFilter("CALL_ENDED_ACTION"))
     }
 
     override fun onPause() {
         super.onPause()
         LocalBroadcastManager.getInstance(this).unregisterReceiver(popupReceiver)
+        LocalBroadcastManager.getInstance(this)
+            .unregisterReceiver(callEndedReceiver)
     }
 
 
@@ -479,6 +511,21 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onStart() {
+        super.onStart()
+        callReceiver = CallReceiver()
+        val filter = IntentFilter().apply {
+            addAction(TelephonyManager.ACTION_PHONE_STATE_CHANGED)
+            addAction(Intent.ACTION_NEW_OUTGOING_CALL)
+        }
+        registerReceiver(callReceiver, filter)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(callReceiver)
+    }
     override fun onBackPressed() {
         super.onBackPressed()
 //        AlertDialog.Builder(this)
@@ -504,7 +551,6 @@ class MainActivity : AppCompatActivity() {
                     .versionName
                 homeViewModel.updateToken(versionName.toString())
                 Log.d("FCM", "FCM Token: $token")
-
                 // TODO: Send token to your server or save it in preferences
             }
     }
